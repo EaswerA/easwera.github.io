@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#004 - USES ARCH BTW</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #d7e3f4;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Press Start 2P', monospace;
+            background: repeating-linear-gradient(45deg,
+                    #d7e3f4,
+                    #d7e3f4 10px,
+                    #9fb5cc 10px,
+                    #9fb5cc 20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff8dc;
+            border: 6px solid #111;
+            border-radius: 12px;
+            box-shadow: 8px 8px #333;
+        }
+
+        .pokedex-header {
+            background: #30d4da;
+            color: #fff;
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+            border: 3px solid #000;
+            box-shadow: 0 2px #000;
+            margin-bottom: 20px;
+        }
+
+        .sprite {
+            display: block;
+            width: 96px;
+            height: 96px;
+            margin: 0 auto 20px;
+            image-rendering: pixelated;
+        }
+
+        .entry-box {
+            background: #f1e8c5;
+            border: 3px solid #111;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .entry-box p {
+            margin-bottom: 16px;
+            font-size: 10px;
+            line-height: 1.6;
+        }
+
+        .blog-meta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 8px;
+            color: #333;
+            background: #fff;
+            border: 2px solid #000;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            font-size: 10px;
+            background: #30d4da;
+            color: #fff;
+            padding: 8px 12px;
+            border: 3px solid #111;
+            text-decoration: none;
+            box-shadow: 3px 3px #000;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            background: #b71c1c;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 10px;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="pokedex-header">#004 - USES ARCH BTW</div>
+
+        <img src="https://img.pokemondb.net/sprites/heartgold-soulsilver/shiny/piplup.png" alt="Code Icon"
+            class="sprite">
+
+        <div class="entry-box">
+            <p>I had been a Microslop Windows user for like 95% of my life. I didn't even know there WERE other operating systems. And when I did get to know about them, I audibly went "Why would ANYONE want to use them when Windows just does everything for you?"</p>
+            <p>Now like I mentioned before, I wasn't much of a computer head before. I didn't care about the finer details and the customizations options and all the such. I thought it would just be tiresome. Even for a while after I joined college. But even being as nonchalant as I was, I could just FEEL that Windows dragged my laptop through hell. It would have random copilot features, tons of bloatware, restrictive customization options and many more. It literally felt like a devil on my shoulder.</p>
+            <p>Linux is of course advertised as a counteracting angel. It gives you everything you would possibly need whether you are a developer or otherwise. Full control of your system. YOU are the head of everything. But the first hurdle is learning how to come out of the ease of Windows and dip your toes in dangerous waters.</p>
+            <p>Trying to give up Windows and use Linux felt like I was Rapunzel. I saw the outside world for all it's freedom and beauty but I was so scared of it's dangers aswell. Leaving the comfort of the castle that was Windows felt like a decision that was safest and most comfortable. I did the research and scouted out which linux OS I truly wanted and there were just so many options and so much to be done that I almost just gave up hope.</p>
+            <p>Then came my Flynn Rider, my savior Omarchy. Arch was always pretty high up on the OS I wanted to switch to. So the moment I learned there was environment with arch and hyprland already setup, I was SOLD. I was a little skeptical again because I was already researching various dotfiles and thought it would be beneficial if I just set everything up myself. But I downloaded it anyways because yolo (also I could always just nuke it). AND MAN IT WAS WORTH IT.</p>
+            <p>Now after getting some help from my friends (Thank you, Varun Adithya Arch King) and a botched installation later because I am an idiot, I finally got in. Now there were TONS of differences in first glance itself. This was my first time using a pure linux system after all. But honestly the first thing that stuck out was how smooth my laptop became. I could open apps quicker, animations were faster, my literally glided through the screen. It really opened my eyes on how much windows absolutely sucks out the soul from your laptop.</p>
+            <p>Ok now enough of the useless yapping and onto the useful yapping, the features that Omarchy provides. Like mentioned before, Omarchy comes with hyprland already set up. It relies heavily on the super key(Windows key) and almost all keybinds use it similar to things like GNOME but even more so. Using the mouse becomes entirely optional as you can do anything with just the keybinds. You can open numerous apps, your terminal, switch between workspaces, drag and resize windows and much more just through the keybinds. The keybinds are ALL customizable of course and you can change them or add new ones all to your liking.</p>
+            <p>One of the main things about almost every linux distributions is getting used to the terminal. Every task needs some level of terminal understanding to get down. This is one of the things that demotivates many Windows Users from switching to Windows(myself included). Omarchy does a good job easing you into this switch. Press Super+Alt+Space and you get many functions like installation, updating, theme and background switching, power options etc. You don't even have to access the terminal. Making deeper changes will of course need terminal expertise but it does a good job of not completely throwing you in the dark. Of course, there are many user friendly distributions like Linux Mint, Ubuntu but you can't say "I use Arch btw" and brag to people so thats just a loss overall.</p>
+            <p>Omarchy comes with everything setup. You have waybar, walker, an app drawer, file manager and various apps installed already with the useful ones having keybinds. I can work on a project while doomscrolling through youtube shorts or instagram effectively with hyprland. It has alacritty as the default terminal but also has support for kitty and ghostty. I especially love that it came with lazyvim and lazygit setup. They made the process of developing my projects tremendously better. Despite all the setups, Omarchy is still COMPLETELY customizable unlike a certain well used OS (*cough* Windows). It is still Arch afterall. I myself have made so many changes to my system but having the setups just lets me get started quicker and with less hassle. And the setups are top tier quality.</p>
+            <p>Omarchy is mainly made with developers in mind, so gaming isn't a top priority. Since I have the worst laptop known to mankind, I gave up on gaming in it long back. However, I have played minecraft and roblox with it and they ran pretty smoothly. You can also download Steam in it. So gaming is still pretty decent.</p>
+            <p>Omarchy has a plethora of beautiful themes to switch from to. You can also create your own themes and share them. Many omarchy users have also created their own themes and shared it. Some of them are so creative and beautiful it makes me just want to mindlessly scroll through every background and stare at it.</p>
+            <p>As good as this is, there are still things to worry about. You cannot completely avoid the skill check of Arch, there will still be some issues sometimes. Setting up some things will require alot of time and patience. You will have to constantly update packages, avoid conflicts, make sure you dont accidently rm -rf an important file and the most dangerous of all faulty updates. There are numerous times that an update messed up my config files and I had to fix it all by myself. These things will obviously need research and effort put into it. But it will translate to beneficial gains in knowledge. You get a deeper understanding of your system and how it works.</p>
+            <p>Like all things in life, you have to take the good with the bad. And Omarchy's goods heavily outweigh the bads. For anyone who wants to step into the evergrowing world of Linux in a safe and fun way, I would definitely recommend Omarchy. Especially if you are a developer. It is just too good to be true.</p>
+            <p>I'm pretty bad at explaining things so you might still have alot of doubts. Luckily, the Omarchy Manual is wonderful. Just click <a href="https://learn.omacom.io/2/the-omarchy-manual" target="_blank">here</a> to visit.</p>
+        </div>
+
+        <div class="blog-meta">
+            <span>🗓️ 17 March, 2026</span>
+            <span id="now-playing">🎵 Now Playing: Loading...</span>
+            <span>🏷️ Tags: java, python, programming</span>
+        </div>
+
+        <a href="blog.html" class="back-btn">← Return to Blogdex</a>
+    </div>
+    <script>
+        const username = "easw3r"; 
+        const apiKey = "b8ceb8a6de64edcbba90e86730f0efef"; 
+
+        async function fetchNowPlaying() {
+            const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;
+
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+                const track = data.recenttracks.track[0];
+                const song = `${track.name} - ${track.artist["#text"]}`;
+                const nowPlaying = track["@attr"]?.nowplaying === "true"
+                    ? `🎵 Now Playing: "${song}"`
+                    : `🎵 Last Played: "${song}"`;
+
+                document.getElementById("now-playing").textContent = nowPlaying;
+            } catch (err) {
+                document.getElementById("now-playing").textContent = "🎵 Unable to fetch song";
+            }
+        }
+
+        fetchNowPlaying();
+    </script>
+
+</body>
+
+</html>
+
