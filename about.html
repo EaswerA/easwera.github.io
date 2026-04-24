@@ -201,10 +201,77 @@
                 padding: 8px 10px;
             }
         }
+
+        .theme-toggle {
+            position: fixed;
+            top: 14px;
+            right: 14px;
+            z-index: 2000;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 8px;
+            background: #fff8dc;
+            color: #111;
+            border: 3px solid #111;
+            box-shadow: 3px 3px #333;
+            padding: 8px 10px;
+            cursor: pointer;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-1px);
+        }
+
+        body.dark-mode {
+            background: repeating-linear-gradient(45deg, #0f172a, #0f172a 10px, #1e293b 10px, #1e293b 20px);
+            color: #e5e7eb;
+        }
+
+        body.dark-mode .gameboy {
+            background: #7f1d1d;
+            border-color: #020617;
+        }
+
+        body.dark-mode .screen,
+        body.dark-mode .textbox,
+        body.dark-mode nav a,
+        body.dark-mode .blog-card,
+        body.dark-mode .footer-bar {
+            background: #1f2937;
+            color: #e5e7eb;
+            border-color: #334155;
+            box-shadow: 4px 4px #020617;
+        }
+
+        body.dark-mode .footer-bar a {
+            color: #e5e7eb;
+        }
+
+        body.dark-mode nav a:hover,
+        body.dark-mode .footer-bar a:hover,
+        body.dark-mode .blog-card:hover {
+            background: #334155;
+            color: #fca5a5;
+        }
+
+        body.dark-mode .now-playing-bar {
+            background: #0b1220;
+            color: #e5e7eb;
+            border-color: #334155;
+            box-shadow: 4px 4px #020617;
+        }
+
+        body.dark-mode .theme-toggle {
+            background: #111827;
+            color: #e5e7eb;
+            border-color: #475569;
+            box-shadow: 3px 3px #020617;
+        }
     </style>
 </head>
 
 <body>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">DARK MODE</button>
+
     <div class="gameboy">
         <div class="screen">
             <h1>WASSSUP! I'm Easwer</h1>
@@ -274,6 +341,33 @@
         }
 
         fetchNowPlayingGlobal();
+    </script>
+
+    <script>
+        (function () {
+            const themeKey = "site-theme";
+            const toggle = document.getElementById("theme-toggle");
+
+            function setToggleLabel(theme) {
+                toggle.textContent = theme === "dark" ? "LIGHT MODE" : "DARK MODE";
+            }
+
+            function applyTheme(theme) {
+                document.body.classList.toggle("dark-mode", theme === "dark");
+                setToggleLabel(theme);
+            }
+
+            const savedTheme = localStorage.getItem(themeKey);
+            const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+            applyTheme(initialTheme);
+
+            toggle.addEventListener("click", function () {
+                const nextTheme = document.body.classList.contains("dark-mode") ? "light" : "dark";
+                localStorage.setItem(themeKey, nextTheme);
+                applyTheme(nextTheme);
+            });
+        })();
     </script>
 </body>
 
