@@ -381,7 +381,7 @@
 
             const savedTheme = localStorage.getItem(themeKey);
             const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-            const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+            const initialTheme = savedTheme || "dark";
             applyTheme(initialTheme);
 
             toggle.addEventListener("click", function () {
