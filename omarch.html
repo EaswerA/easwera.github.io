@@ -18,11 +18,9 @@
         body {
             margin: 0;
             font-family: 'Press Start 2P', monospace;
-            background: repeating-linear-gradient(45deg,
-                    #d7e3f4,
-                    #d7e3f4 10px,
-                    #9fb5cc 10px,
-                    #9fb5cc 20px);
+            background: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 40%),
+                    radial-gradient(circle at 85% 10%, rgba(159, 181, 204, 0.45) 0%, rgba(159, 181, 204, 0) 42%),
+                    linear-gradient(135deg, #c9d8ec 0%, #d7e3f4 45%, #c3d2e7 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -132,7 +130,9 @@
         }
 
         body.dark-mode {
-            background: repeating-linear-gradient(45deg, #0f172a, #0f172a 10px, #1e293b 10px, #1e293b 20px);
+            background: radial-gradient(circle at 20% 20%, rgba(71, 85, 105, 0.35) 0%, rgba(71, 85, 105, 0) 42%),
+                    radial-gradient(circle at 85% 0%, rgba(30, 41, 59, 0.6) 0%, rgba(30, 41, 59, 0) 45%),
+                    linear-gradient(135deg, #020617 0%, #0b1220 50%, #111827 100%);
             color: #e5e7eb;
         }
 
