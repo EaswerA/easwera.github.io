@@ -411,6 +411,70 @@
             border-color: #475569;
             box-shadow: 3px 3px #020617;
         }
+
+        .pokedex-search {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .pokedex-search input {
+            width: min(520px, 100%);
+            background: #fff8dc;
+            border: 3px solid #111;
+            box-shadow: 3px 3px #333;
+            padding: 10px 12px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 10px;
+            color: #111;
+        }
+
+        .pokedex-search input::placeholder {
+            color: #5a5a5a;
+        }
+
+        .pokedex-search input:focus {
+            outline: none;
+            transform: translateY(-1px);
+            box-shadow: 4px 4px #222;
+        }
+
+        .pokedex-search-meta {
+            font-size: 9px;
+            color: #111;
+            background: #f1e8c5;
+            border: 2px solid #111;
+            padding: 6px 10px;
+            box-shadow: 2px 2px #333;
+        }
+
+        .pokedex-search-empty {
+            width: 100%;
+            text-align: center;
+            font-size: 10px;
+            color: #111;
+            padding: 12px 0;
+            display: none;
+        }
+
+        body.dark-mode .pokedex-search input,
+        body.dark-mode .pokedex-search-meta {
+            background: #1f2937;
+            color: #e5e7eb;
+            border-color: #334155;
+            box-shadow: 3px 3px #020617;
+        }
+
+        body.dark-mode .pokedex-search input::placeholder {
+            color: #9ca3af;
+        }
+
+        body.dark-mode .pokedex-search-empty {
+            color: #e5e7eb;
+        }
     </style>
 </head>
 
@@ -441,6 +505,13 @@
             style="width: 100%; text-align: center; font-size: 14px; margin-bottom: 20px; font-weight: bold; background: #c62828; color: #fff; padding: 8px 0; border: 3px solid #000; box-shadow: 0 2px 0 #000;">
             📖 PERSONAL POKEDEX LOG
         </div>
+
+        <div class="pokedex-search" aria-label="Search blog entries">
+            <input id="blog-search-input" type="search" placeholder="Search entries..." autocomplete="off" />
+            <div id="blog-search-meta" class="pokedex-search-meta">Showing 4 entries</div>
+        </div>
+
+        <div id="blog-search-empty" class="pokedex-search-empty">No entries match that search.</div>
 
         <a href="gym-gains.html" class="poke-card">
             <div style="font-size: 12px; color: #c62828; margin-bottom: 10px;">#001 - GYM GAINS</div>
@@ -507,6 +578,42 @@
         }
 
         fetchNowPlayingGlobal();
+    </script>
+
+    <script>
+        (function () {
+            const searchInput = document.getElementById("blog-search-input");
+            const cards = Array.from(document.querySelectorAll("#pokedex .poke-card"));
+            const meta = document.getElementById("blog-search-meta");
+            const emptyState = document.getElementById("blog-search-empty");
+
+            if (!searchInput || cards.length === 0) {
+                return;
+            }
+
+            function updateSearch() {
+                const term = searchInput.value.trim().toLowerCase();
+                let visibleCount = 0;
+
+                cards.forEach((card) => {
+                    const text = card.textContent.toLowerCase();
+                    const matches = term === "" || text.includes(term);
+                    card.style.display = matches ? "block" : "none";
+                    if (matches) {
+                        visibleCount += 1;
+                    }
+                });
+
+                const totalCount = cards.length;
+                meta.textContent = term
+                    ? `Showing ${visibleCount} of ${totalCount} entries`
+                    : `Showing ${totalCount} entries`;
+                emptyState.style.display = visibleCount === 0 ? "block" : "none";
+            }
+
+            searchInput.addEventListener("input", updateSearch);
+            updateSearch();
+        })();
     </script>
 
     <script>
